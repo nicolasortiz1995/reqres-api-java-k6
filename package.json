@@ -1,0 +1,28 @@
+{
+  "name": "reqres-api-java-k6",
+  "version": "1.0.0",
+  "description": "Este es un proyecto de pruebas de rendimiento con K6 para la API https://reqres.in/api/users/2, diseñado para evaluar su desempeño bajo diferentes condiciones de carga. Se implementan pruebas de humo, carga, estrés, spike y soak, generando reportes en JSON y HTML, con integración opcional a Grafana + InfluxDB para monitoreo en tiempo real.",
+  "main": "index.js",
+  "scripts": {
+    "smoke": "k6 run tests/smoke_test.js --summary-export=reports/stress_test_results.json",
+    "load": "k6 run tests/load_test.js --summary-export=reports/load_test_results.json",
+    "stress": "k6 run tests/stress_test.js --summary-export=reports/stress_test_results.json",
+    "spike": "k6 run tests/spike_test.js --summary-export=reports/stress_test_results.json",
+    "soak": "k6 run tests/soak_test.js --summary-export=reports/stress_test_results.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolasortiz1995/reqres-api-java-k6.git"
+  },
+  "keywords": [],
+  "author": "Nicolás Ortiz",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nicolasortiz1995/reqres-api-java-k6/issues"
+  },
+  "homepage": "https://github.com/nicolasortiz1995/reqres-api-java-k6#readme",
+  "devDependencies": {
+    "k6-html-reporter": "^1.0.5"
+  }
+}
